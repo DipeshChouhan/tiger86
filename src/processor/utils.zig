@@ -12,9 +12,13 @@ const FlagsType = enum {
     OF,
 };
 
+// clear the flags by setting it to 0
+
 pub inline fn flagsClearAll(flags: *u16) void {
     flags.* = 0;
 }
+
+// clear individual bit of the flags
 
 pub inline fn flagsClear(comptime flag: FlagsType, flags: *u16) void {
     switch (flag) {
@@ -30,6 +34,7 @@ pub inline fn flagsClear(comptime flag: FlagsType, flags: *u16) void {
     }
 }
 
+// set individual bit of the flags
 pub inline fn flagsSet(comptime flag: FlagsType, flags: *u16) void {
     switch (flag) {
         .CF => flags.* |= mask,

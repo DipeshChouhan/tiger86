@@ -1,5 +1,5 @@
 // Execution unit of 8086 processor
-pub const Eu = struct {
+pub var Eu = struct {
     // general registers
     ax: u16,
     bx: u16,

@@ -16,5 +16,7 @@ const InstType = enum(u8) {
 const Decoder = struct {
     biu: *Biu, // a pointer to bus interface unit
 
+    // decode the instruction
+    // param inst: a pointer to empty Instruction struct which get's filled by the decoder
     fn decode(self: *Decoder, inst: *Instruction) void {}
 };

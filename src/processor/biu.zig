@@ -16,4 +16,5 @@ pub var Biu = struct {
 
     // 6 byte instruction queue
     inst_queue: [6]u8,
+    inst_queue_len: i32,
 };

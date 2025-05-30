@@ -12,6 +12,16 @@ const FlagsType = enum {
     OF,
 };
 
+pub var InstructionQueue = struct { data: [6]u8, len: u8, head: u8 };
+
+// the size can't be greater than 6
+pub inline fn instQueueAdd(queue: *InstructionQueue, inst: u8) void {
+    queue.data[queue.len] = inst;
+    queue.len += 1;
+}
+
+pub inline fn instQueueFetch(queue: *InstructionQueue) u8 {}
+
 // clear the flags by setting it to 0
 
 pub inline fn flagsClearAll(flags: *u16) void {
